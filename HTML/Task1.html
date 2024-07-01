@@ -52,51 +52,50 @@
 
 <div class="container">
   <div>
-    <table>
-      <tr>
-        <th>Name</th>
-        <td>
-          <input>
-        </td>
-      </tr>
-
-      <tr>
-        <th>Age</th>
-        <td>
-          <input>
-        </td>
-      </tr>
-
-      <tr>
-        <th>Gender</th>
-        <td>
-          <form>
-            <input type="radio" name="gender" id="male" value="Male"><label for="male">Male</label>
-            <input type="radio" name="gender" id="female" value="Female"><label for="female">Female</label>
-          </form>
-          
-        </td>
-      </tr>
-
-      <tr>
-        <th>Course</th>
-        <td>
-          <select id="course"><option>Select</option><option>Javascript</option><option>C++</option><option>Python</option>
+      <form>
+        <table>
+        <tr>
+          <th>Name</th>
+          <td>
+            <input required>
           </td>
-      </tr>
-
-      <tr>
-        <th>E-mail</th>
-        <td>
-          <input>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <button>Save</button>
-        </td>
-      </tr>
-    </table>  
+        </tr>
+  
+        <tr>
+          <th>Age</th>
+          <td>
+            <input required>
+          </td>
+        </tr>
+  
+        <tr>
+          <th>Gender</th>
+          <td>
+              <input type="radio" name="gender" value="Male"><label for="male">Male</label>
+              <input type="radio" name="gender" value="Female"><label for="female">Female</label>
+          </td>
+        </tr>
+  
+        <tr>
+          <th>Course</th>
+          <td>
+            <select id="course"><option>Select</option><option>Javascript</option><option>C++</option><option>Python</option>
+            </td>
+        </tr>
+  
+        <tr>
+          <th>E-mail</th>
+          <td>
+            <input required>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button>Save</button>
+          </td>
+        </tr>
+      </table>
+    </form>    
   </div>
 </div>
 </body>
