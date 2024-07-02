@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Personal Website</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      header {
+        background-color: #414852;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+      }
+      nav {
+        text-align: center;
+        margin-top: 10px;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0 15px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .profile-img {
+        display: block;
+        margin: 20px auto;
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .skills-list {
+        margin-top: 10px;
+      }
+      .skills-list ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .skills-list li {
+        margin-bottom: 5px;
+      }
+      footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 10px;
+      }
+      p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Sanjay S</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="container" id="about">
+      <img
+        src="profile-picture.jpg"
+        alt="Profile Picture"
+        class="profile-img"
+      />
+      <section>
+        <h2>About Me</h2>
+        <p>
+          Hello! I am Sanjay. I have completed my B.E Computer science degree at
+          J.N.N Institute of Engineering. I am a Frontend Developer and my
+          skills are listed below.
+        </p>
+      </section>
+
+      <section class="skills-list" id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript (ES6+)</li>
+          <li>Responsive Web Design</li>
+          <li>Version Control (Git)</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer id="contact">
+      <p>&nbsp; Sanjay S</p>
+      <p>&nbsp; Phone no: 0123456789</p>
+      <p>&nbsp; Mail: sanjaysj9361@gmail.com</p>
+    </footer>
+  </body>
+</html>
