@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            height: 100vh;
+        }
+        .container {
+          text-align: center;
+          margin: 100px 0;
+        }
+        #addBookForm, #searchForm {
+            margin-bottom: 20px;
+        }
+        input, button {
+            padding: 12px;
+            margin: 10px 0;
+        }  
+        button {
+          background-color: rgb(8, 189, 255);
+          color: white;
+          border:none;
+          border-radius: 6px;
+        }
+        #bookList {
+            margin-top: 20px;
+        }
+        .book {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .no-results {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Library Management System</h1>
+
+  <form id="addBookForm">
+      <input type="text" id="title" name="title" required placeholder="Title">
+      <input type="text" id="author" name="author" required placeholder="Author">
+      <input type="number" id="pages" name="pages" required placeholder="Pages">
+      <input type="text" id="genre" name="genre" required placeholder="Genre">
+      <button type="submit">Add Book</button>
+  </form>
+</div>
+
+<form id="searchForm">
+    <input type="text" id="searchTitle" name="searchTitle" placeholder="Search by Title">
+    <button type="submit">Search</button>
+</form>
+
+<div id="bookList"></div>
+<div class="no-results" id="noResults" style="display: none;">No books found.</div>
+
+<script>
+    let books = [];
+
+    document.getElementById('addBookForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const title = document.getElementById('title').value;
+        const author = document.getElementById('author').value;
+        const pages = document.getElementById('pages').value;
+        const genre = document.getElementById('genre').value;
+
+        const book = { title, author, pages, genre };
+        books.push(book);
+        renderBooks(books);
+        this.reset();
+    });
+
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchTitle = document.getElementById('searchTitle').value.toLowerCase();
+        const filteredBooks = books.filter(book => book.title.toLowerCase().includes(searchTitle));
+        renderBooks(filteredBooks);
+        document.getElementById('noResults').style.display = filteredBooks.length ? 'none' : 'block';
+    });
+
+    function renderBooks(bookList) {
+        const bookListDiv = document.getElementById('bookList');
+        bookListDiv.innerHTML = '';
+
+        bookList.forEach(book => {
+            const bookDiv = document.createElement('div');
+            bookDiv.classList.add('book');
+            bookDiv.innerHTML = `
+                <h2>${book.title}</h2>
+                <p>Author: ${book.author}</p>
+                <p>Pages: ${book.pages}</p>
+                <p>Genre: ${book.genre}</p>
+            `;
+            bookListDiv.appendChild(bookDiv);
+        });
+    }
+</script>
+
+</body>
+</html>
